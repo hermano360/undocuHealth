@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+
+
+.btn {
+  background-color: #EF4423;
+  border-radius: 20px;
+  font-size: 20px;
+  margin-top: 30px;
+}
+
+input[type=text] {
+  font-family: 'Ubuntu', sans-serif;
+  font-size: 20px;
+}
+
+.font {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.icons {
+  padding: 5px;
+}
+
+form {
+  padding-top: 10px;
+}
+
+h1 {
+  
+}

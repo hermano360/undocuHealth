@@ -1,13 +1,14 @@
 import React, {Component} from 'react'
 import Map from './Map'
 import Homepage from './Homepage/Homepage'
+import MapFilter from './MapFilter'
 
 
 class Main extends Component {
   constructor(){
     super()
     this.state = {
-      page:'home'
+      page:'mapfilter'
     }
     }
 
@@ -17,6 +18,10 @@ class Main extends Component {
       lng:-118.2168448
     }
     switch(this.state.page) {
+      case 'mapfilter':
+        return (
+          <MapFilter/>
+        )
       case 'home':
         return (
           <Homepage />

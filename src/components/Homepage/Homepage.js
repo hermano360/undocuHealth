@@ -1,5 +1,6 @@
 import React, {Component} from 'react'
 import {Navbar, NavItem, Icon, Row, Col} from 'react-materialize'
+import Map from '../Map'
 
 class Homepage extends Component {
   constructor(){
@@ -22,12 +23,10 @@ class Homepage extends Component {
             <Col s={10} offset='s1' style={{textAlign: 'center', fontSize:'30px'}}>
               Health is the foundation of our community. Search for your nearest health provider
             </Col>
-            <Col s={10} offset='s1' style={{textAlign: 'center', fontSize:'30px'}}>
-              Health is the foundation of our community. Search for your nearest health provider
-            </Col>
+            <div style={{width:'90vh',height:'100px'}}>
+              <Map center={location}/>
+            </div>
           </Row>
-
-
         </div>
       )
 

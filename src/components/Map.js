@@ -32,12 +32,6 @@ class Map extends Component {
           </GoogleMap>
         } />
         </div>
-
-
-
-
-
-
     )
   }
 }
