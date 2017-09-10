@@ -12,8 +12,20 @@ class Map extends Component {
   }
 
   render(){
-    console.log('test')
+    console.log(this.props.markers)
     const mapContainer = <div style={{height: '100%', width:'100%'}}></div>
+    const markers = this.props.markers.map((clinic, i)=>{
+      const marker = {
+        position: {
+          lat: parseFloat(clinic.lat),
+          lng: parseFloat(clinic.lng)
+        }
+      }
+
+      return  (
+        <Marker draggable={false} key={i} {...marker}>
+        </Marker>)
+    })
     let that=this;
 
     return (
@@ -29,6 +41,7 @@ class Map extends Component {
             position: google.maps.ControlPosition.LEFT_BOTTOM
           }}}
           >
+          {markers}
           </GoogleMap>
         } />
         </div>
