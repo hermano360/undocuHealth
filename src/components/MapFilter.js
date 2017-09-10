@@ -1,14 +1,11 @@
 import React, {Component} from 'react'
 import {Navbar, NavItem, Icon, Row, Col, Button} from 'react-materialize'
-<<<<<<< HEAD
-=======
 import Map from './Map'
 
 var teal = "#4AB4CB";
 var red = "#EF4423";
 var lightG = '#CCC';
 var darkG = '#424242';
->>>>>>> f2cd5de515542f205f1d16dd8422a200b8e72f65
 
 class Homepage extends Component {
   constructor(){
@@ -41,32 +38,26 @@ class Homepage extends Component {
               <Row>
                 <Col s={12}>
                   <p></p>
-                  <input type="text" placeholder="Health Fund"/>
-                </Col>
-                <Col s={12}>
+                  <form action="" method="">
+                  <input type="text" placeholder="Health Field"/>
                   <input type="text" placeholder="State"/>
-                </Col>
-                <Col s={12}>
                   <input type="text" placeholder="Zip Code"/>
-                </Col>
-                <Col s={12}>
                   <input type="text" placeholder="Status"/>
-                </Col>
-                <Col s={12} style={{textAlign:"center"}}>
+                  <div style={{textAlign:'center'}}>
                   <Button>Search</Button>
+                </div>
+                  </form>
                 </Col>
               </Row>
             </div>
           </Row>
 
           <Row>
-            <Col s={12} style={{backgroundColor: lightG, width:'100vw', height:'100px', textAlign:'center'}}>
+            <Col s={12} style={{backgroundColor: lightG, width:'100vw', height:'100px', textAlign:'center', marginTop:'30px'}}>
                 <div style={{paddingTop:'35px'}}>
-                  <a href="#"><Icon small>insert_chart</Icon></a>
-                  <a href="#"><Icon small>insert_chart</Icon></a>
-                  <a href="#"><Icon small>insert_chart</Icon></a>
-                  <a href="#"><Icon small>insert_chart</Icon></a>
-                  <a href="#"><Icon small>insert_chart</Icon></a>
+                  <a href="#" style={{paddingRight:'5px'}}><img src="facebook.png" style={{width:"40px", height:"40px"}}/></a>
+                  <a href="#" style={{paddingRight:'5px'}}><img src="instagram.png" style={{width:"40px", height:"40px"}}/></a>
+                  <a href="#"><img src="twitter.png" style={{width:"40px", height:"40px"}}/></a>
                 </div>
             </Col>
             <Col s={12} style={{backgroundColor: darkG, width:'100vw', height:'100px', color:'#FFF', textAlign:'center'}}>

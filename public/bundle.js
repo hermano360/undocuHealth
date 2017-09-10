@@ -80,11 +80,7 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_Main2.default, null)
-	      );
+	      return _react2.default.createElement(_Main2.default, null);
 	    }
 	  }]);
 	
@@ -22241,6 +22237,10 @@
 	
 	var _Homepage2 = _interopRequireDefault(_Homepage);
 	
+	var _MapFilter = __webpack_require__(289);
+	
+	var _MapFilter2 = _interopRequireDefault(_MapFilter);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22258,7 +22258,7 @@
 	    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this));
 	
 	    _this.state = {
-	      page: 'home'
+	      page: 'mapfilter'
 	    };
 	    _this.handleSearchClick = _this.handleSearchClick.bind(_this);
 	    return _this;
@@ -22279,6 +22279,8 @@
 	        lng: -118.2168448
 	      };
 	      switch (this.state.page) {
+	        case 'mapfilter':
+	          return _react2.default.createElement(_MapFilter2.default, null);
 	        case 'home':
 	          return _react2.default.createElement(_Homepage2.default, { onSearchClick: this.handleSearchClick });
 	        case 'map':
@@ -28701,6 +28703,10 @@
 	
 	var _reactMaterialize = __webpack_require__(241);
 	
+	var _Map = __webpack_require__(185);
+	
+	var _Map2 = _interopRequireDefault(_Map);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -28786,6 +28792,7 @@
 	            )
 	          ),
 	          _react2.default.createElement(
+<<<<<<< HEAD
 	            _reactMaterialize.Col,
 	            { s: 12, m: 1, style: { paddingTop: "100px", textAlign: 'center' } },
 	            _react2.default.createElement('img', { src: "EQUAL.png", style: { width: "100px", height: "100px" } })
@@ -28808,6 +28815,11 @@
 	              { onClick: this.props.onSearchClick },
 	              'Search'
 	            )
+=======
+	            'div',
+	            { style: { width: '90vh', height: '100px' } },
+	            _react2.default.createElement(_Map2.default, { center: location })
+>>>>>>> f2cd5de515542f205f1d16dd8422a200b8e72f65
 	          )
 	        )
 	      );
@@ -33830,6 +33842,175 @@
 	};
 	
 	exports.default = Toast;
+
+/***/ }),
+/* 289 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactMaterialize = __webpack_require__(241);
+	
+	var _Map = __webpack_require__(185);
+	
+	var _Map2 = _interopRequireDefault(_Map);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var teal = "#4AB4CB";
+	var red = "#EF4423";
+	var lightG = '#CCC';
+	var darkG = '#424242';
+	
+	var Homepage = function (_Component) {
+	  _inherits(Homepage, _Component);
+	
+	  function Homepage() {
+	    _classCallCheck(this, Homepage);
+	
+	    return _possibleConstructorReturn(this, (Homepage.__proto__ || Object.getPrototypeOf(Homepage)).call(this));
+	  }
+	
+	  _createClass(Homepage, [{
+	    key: 'render',
+	    value: function render() {
+	      var _ref;
+	
+	      var location = {
+	        lat: 33.9866179,
+	        lng: -118.2168448
+	      };
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { style: { width: '100vw', height: '100vh' } },
+	        _react2.default.createElement(
+	          _reactMaterialize.Row,
+	          null,
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, style: (_ref = { backgroundColor: teal, textAlign: 'center', width: "100vw" }, _defineProperty(_ref, 'textAlign', 'center'), _defineProperty(_ref, 'fontSize', '20px'), _defineProperty(_ref, 'color', '#FFF'), _ref) },
+	            _react2.default.createElement('img', { src: 'logo.png', style: { width: '100px', height: '100px' } }),
+	            _react2.default.createElement(
+	              'div',
+	              null,
+	              'Our Amazing Name'
+	            ),
+	            _react2.default.createElement('br', null)
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12 },
+	            _react2.default.createElement(
+	              'div',
+	              { style: { width: '100vw', height: '300px', textAlign: 'center' } },
+	              _react2.default.createElement(_Map2.default, { center: location })
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { style: { width: '20vh', height: '90px', display: 'inline' } },
+	            _react2.default.createElement(
+	              _reactMaterialize.Row,
+	              null,
+	              _react2.default.createElement(
+	                _reactMaterialize.Col,
+	                { s: 12 },
+	                _react2.default.createElement('p', null),
+	                _react2.default.createElement(
+	                  'form',
+	                  { action: '', method: '' },
+	                  _react2.default.createElement('input', { type: 'text', placeholder: 'Health Field' }),
+	                  _react2.default.createElement('input', { type: 'text', placeholder: 'State' }),
+	                  _react2.default.createElement('input', { type: 'text', placeholder: 'Zip Code' }),
+	                  _react2.default.createElement('input', { type: 'text', placeholder: 'Status' }),
+	                  _react2.default.createElement(
+	                    'div',
+	                    { style: { textAlign: 'center' } },
+	                    _react2.default.createElement(
+	                      _reactMaterialize.Button,
+	                      null,
+	                      'Search'
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactMaterialize.Row,
+	          null,
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, style: { backgroundColor: lightG, width: '100vw', height: '100px', textAlign: 'center', marginTop: '30px' } },
+	            _react2.default.createElement(
+	              'div',
+	              { style: { paddingTop: '35px' } },
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#', style: { paddingRight: '5px' } },
+	                _react2.default.createElement('img', { src: 'facebook.png', style: { width: "40px", height: "40px" } })
+	              ),
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#', style: { paddingRight: '5px' } },
+	                _react2.default.createElement('img', { src: 'instagram.png', style: { width: "40px", height: "40px" } })
+	              ),
+	              _react2.default.createElement(
+	                'a',
+	                { href: '#' },
+	                _react2.default.createElement('img', { src: 'twitter.png', style: { width: "40px", height: "40px" } })
+	              )
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, style: { backgroundColor: darkG, width: '100vw', height: '100px', color: '#FFF', textAlign: 'center' } },
+	            _react2.default.createElement('br', null),
+	            _react2.default.createElement(
+	              'div',
+	              { 'class': 'font' },
+	              'ABOUT'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { 'class': 'font' },
+	              'COMMUNITY PARTNERS'
+	            ),
+	            _react2.default.createElement(
+	              'div',
+	              { 'class': 'font' },
+	              'CONTACT'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Homepage;
+	}(_react.Component);
+	
+	exports.default = Homepage;
 
 /***/ })
 /******/ ]);
