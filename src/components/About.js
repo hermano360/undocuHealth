@@ -1,14 +1,13 @@
 import React, {Component} from 'react'
 import {Navbar, NavItem, Icon, Row, Col, Button} from 'react-materialize'
-<<<<<<< HEAD
-=======
+
 import Map from './Map'
 
 var teal = "#4AB4CB";
 var red = "#EF4423";
 var lightG = '#CCC';
 var darkG = '#424242';
->>>>>>> f2cd5de515542f205f1d16dd8422a200b8e72f65
+
 
 class Homepage extends Component {
   constructor(){
