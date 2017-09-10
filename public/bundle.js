@@ -22243,6 +22243,12 @@
 	
 	var _MapFilter2 = _interopRequireDefault(_MapFilter);
 	
+	var _Review = __webpack_require__(290);
+	
+	var _Review2 = _interopRequireDefault(_Review);
+	
+	var _reactMaterialize = __webpack_require__(241);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22250,6 +22256,11 @@
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 	
 	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var teal = "#4AB4CB";
+	var red = "#EF4423";
+	var lightG = '#CCC';
+	var darkG = '#424242';
 	
 	var Main = function (_Component) {
 	  _inherits(Main, _Component);
@@ -22577,26 +22588,81 @@
 	  }, {
 	    key: 'render',
 	    value: function render() {
+	      var _this2 = this;
+	
 	      var location = {
 	        lat: 33.9866179,
 	        lng: -118.2168448
 	      };
-	      switch (this.state.page) {
-	        case 'mapfilter':
-	          return _react2.default.createElement(_MapFilter2.default, _extends({ markers: this.state.clinics, healthField: this.state.healthField, onPropertyChange: this.setPropertyChange }, this.state));
-	        case 'home':
-	          return _react2.default.createElement(_Homepage2.default, { onSearchClick: this.handleSearchClick });
-	        case 'map':
-	          return _react2.default.createElement(
-	            'div',
-	            { style: {
-	                width: '100vw',
-	                height: '100vh'
-	              } },
-	            _react2.default.createElement(_Map2.default, { center: location, markers: this.state.clinics }),
-	            ' '
-	          );
-	      }
+	
+	      var contentChoice = function contentChoice() {
+	        switch (_this2.state.page) {
+	          case 'mapfilter':
+	            return _react2.default.createElement(_MapFilter2.default, _extends({ healthField: _this2.state.healthField, onPropertyChange: _this2.setPropertyChange, markers: _this2.state.clinics }, _this2.state));
+	          case 'home':
+	            return _react2.default.createElement(_Homepage2.default, { onSearchClick: _this2.handleSearchClick });
+	          case 'review':
+	            return _react2.default.createElement(_Review2.default, null);
+	          case 'map':
+	            return _react2.default.createElement(
+	              'div',
+	              { style: {
+	                  width: '100vw',
+	                  height: '100vh'
+	                } },
+	              _react2.default.createElement(_Map2.default, { center: location, markers: _this2.state.clinics }),
+	              ' '
+	            );
+	        }
+	      };
+	      return _react2.default.createElement(
+	        'div',
+	        null,
+	        _react2.default.createElement(
+	          _reactMaterialize.Navbar,
+	          { brand: 'HEALTHYMENTED', right: true, style: { backgroundColor: teal, paddingLeft: '15px' } },
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'HOME'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'ABOUT'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'REVIEWS'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'CONTACT US'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'PARTNERS'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'LOG IN'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'get-started.html' },
+	            _react2.default.createElement(
+	              _reactMaterialize.Icon,
+	              null,
+	              'more_vert'
+	            )
+	          )
+	        ),
+	        contentChoice()
+	      );
 	    }
 	  }]);
 	
@@ -29038,8 +29104,42 @@
 	  function Homepage() {
 	    _classCallCheck(this, Homepage);
 	
-	    return _possibleConstructorReturn(this, (Homepage.__proto__ || Object.getPrototypeOf(Homepage)).call(this));
+	    var _this = _possibleConstructorReturn(this, (Homepage.__proto__ || Object.getPrototypeOf(Homepage)).call(this));
+	
+	    _this.state = {
+	      page: 'home'
+	    };
+	    return _this;
 	  }
+	
+	  // onNavBarClick(menuName)  {
+	  //   switch (menuName) {
+	  //     case 'home':
+	  //       this.setState({page: 'home'})
+	  //       break;
+	  //     case 'about':
+	  //       this.setState({page: 'about'})
+	  //       break;
+	  //       case 'reviews':
+	  //         this.setState({page: 'reviews'})
+	  //         break;
+	  //         case 'contact us':
+	  //           this.setState({page: 'contact us'})
+	  //           break;
+	  //           case 'partners':
+	  //             this.setState({page: 'partners'})
+	  //             break;
+	  //             case 'log in':
+	  //               this.setState({page: 'log in'})
+	  //               break;
+	  //
+	  //
+	  //
+	  //     default:
+	  //
+	  //
+	  //   }
+	  // }
 	
 	  _createClass(Homepage, [{
 	    key: 'render',
@@ -29054,49 +29154,6 @@
 	      return _react2.default.createElement(
 	        'div',
 	        { style: { width: '100vw', height: '100vh' } },
-	        _react2.default.createElement(
-	          _reactMaterialize.Navbar,
-	          { brand: 'HEALTHYMENTED', right: true, style: { backgroundColor: '#4AB4CB' } },
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: 'HOME' },
-	            'HOME'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: 'ABOUT' },
-	            'ABOUT'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: 'REVIEWS' },
-	            'REVIEWS'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: 'CONTACT US' },
-	            'CONTACT US'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: 'PARTNERS' },
-	            'PARTNERS'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: 'LOG IN' },
-	            'LOG IN'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: 'get-started.html' },
-	            _react2.default.createElement(
-	              _reactMaterialize.Icon,
-	              null,
-	              'more_vert'
-	            )
-	          )
-	        ),
 	        _react2.default.createElement(
 	          _reactMaterialize.Row,
 	          null,
@@ -29134,6 +29191,21 @@
 	              'h3',
 	              null,
 	              ' We will search our database and find your nearest health center based on your zipcode.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, m: 1, style: { paddingTop: "100px", textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "EQUAL.png", style: { width: "100px", height: "100px" } })
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, m: 3, style: { paddingRight: '40px', textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "HealthCenters.png", style: { width: "300px", height: "300px" } }),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              ' This website is ran by the community for the community. Please review the clinics once you visit them to let others know about your experience.'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -34206,8 +34278,6 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
-	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
-	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -34231,8 +34301,7 @@
 	  _createClass(MapFilter, [{
 	    key: 'render',
 	    value: function render() {
-	      var _this2 = this,
-	          _ref;
+	      var _this2 = this;
 	
 	      var location = {
 	        lat: 33.9866179,
@@ -34271,57 +34340,8 @@
 	        'div',
 	        { style: { width: '100vw', height: '100vh', padding: '0px' } },
 	        _react2.default.createElement(
-	          _reactMaterialize.Navbar,
-	          { brand: 'HEALTHYMENTED', right: true, style: { backgroundColor: teal } },
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: '' },
-	            'HOME'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: '' },
-	            'ABOUT'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: '' },
-	            'REVIEWS'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: '' },
-	            'CONTACT US'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: '' },
-	            'PARTNERS'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: '' },
-	            'LOG IN'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: 'get-started.html' },
-	            _react2.default.createElement(
-	              _reactMaterialize.Icon,
-	              null,
-	              'more_vert'
-	            )
-	          )
-	        ),
-	        _react2.default.createElement(
 	          _reactMaterialize.Row,
 	          null,
-	          _react2.default.createElement(
-	            _reactMaterialize.Col,
-	            { s: 12, style: (_ref = { backgroundColor: teal, textAlign: 'center', width: "100vw" }, _defineProperty(_ref, 'textAlign', 'center'), _defineProperty(_ref, 'fontSize', '20px'), _defineProperty(_ref, 'color', '#FFF'), _ref) },
-	            _react2.default.createElement('img', { src: 'logo.png', style: { width: '100px', height: '100px' } }),
-	            _react2.default.createElement('br', null)
-	          ),
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
 	            { m: 12, l: 9, style: {} },
@@ -34434,7 +34454,14 @@
 	            )
 	          )
 	        ),
-	        _react2.default.createElement(_reactMaterialize.Row, null)
+	        _react2.default.createElement(_reactMaterialize.Row, null),
+	        _react2.default.createElement(
+	          _reactMaterialize.Button,
+	          { onClick: function onClick() {
+	              _this2.props.onPropertyChange('page', 'review');
+	            } },
+	          'Change to Reviews'
+	        )
 	      );
 	    }
 	  }]);
@@ -34443,6 +34470,125 @@
 	}(_react.Component);
 	
 	exports.default = MapFilter;
+
+/***/ }),
+/* 290 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactMaterialize = __webpack_require__(241);
+	
+	var _Map = __webpack_require__(185);
+	
+	var _Map2 = _interopRequireDefault(_Map);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var teal = "#4AB4CB";
+	var red = "#EF4423";
+	var lightG = '#CCC';
+	var darkG = '#424242';
+	
+	var Review = function (_Component) {
+	  _inherits(Review, _Component);
+	
+	  function Review() {
+	    _classCallCheck(this, Review);
+	
+	    return _possibleConstructorReturn(this, (Review.__proto__ || Object.getPrototypeOf(Review)).call(this));
+	  }
+	
+	  _createClass(Review, [{
+	    key: 'render',
+	    value: function render() {
+	      var location = {
+	        lat: 33.9866179,
+	        lng: -118.2168448
+	      };
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { style: { width: '100vw', height: '100vh' } },
+	        _react2.default.createElement(
+	          _reactMaterialize.Row,
+	          null,
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, style: { textAlign: 'center', color: red, marginTop: '50px' } },
+	            _react2.default.createElement(
+	              'h1',
+	              null,
+	              'REVIEW THE CLINIC'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, style: { textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: 'Stars.png', style: { width: '690px', height: '175px' } })
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, style: { textAlign: 'center' } },
+	            _react2.default.createElement(
+	              'form',
+	              { action: '', method: '' },
+	              _react2.default.createElement(
+	                _reactMaterialize.Col,
+	                { s: 12, style: { marginBottom: '30px', marginTop: '30px' } },
+	                _react2.default.createElement('input', { type: 'text', label: 'clinic-name', placeholder: 'Clinic Name' })
+	              ),
+	              _react2.default.createElement(
+	                _reactMaterialize.Col,
+	                { s: 6, style: { marginBottom: '30px' } },
+	                _react2.default.createElement('input', { type: 'text', label: 'full name', placeholder: 'Full Name' })
+	              ),
+	              _react2.default.createElement(
+	                _reactMaterialize.Col,
+	                { s: 6, style: { marginBottom: '30px' } },
+	                _react2.default.createElement('input', { type: 'text', label: 'email', placeholder: 'Email' })
+	              ),
+	              _react2.default.createElement(
+	                _reactMaterialize.Col,
+	                { s: 12, style: { marginBottom: '30px' } },
+	                _react2.default.createElement('textarea', { placeholder: 'COMMENT', rows: '4' })
+	              ),
+	              _react2.default.createElement(
+	                _reactMaterialize.Col,
+	                { s: 12, style: { textAlign: 'center' } },
+	                _react2.default.createElement(
+	                  _reactMaterialize.Button,
+	                  null,
+	                  'SUBMIT'
+	                )
+	              )
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Review;
+	}(_react.Component);
+	
+	exports.default = Review;
 
 /***/ })
 /******/ ]);

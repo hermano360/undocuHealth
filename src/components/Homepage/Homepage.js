@@ -4,7 +4,39 @@ import {Navbar, NavItem, Icon, Row, Col, Button} from 'react-materialize'
 class Homepage extends Component {
   constructor(){
     super()
+      this.state={
+        page: 'home'
+      }
     }
+
+  // onNavBarClick(menuName)  {
+  //   switch (menuName) {
+  //     case 'home':
+  //       this.setState({page: 'home'})
+  //       break;
+  //     case 'about':
+  //       this.setState({page: 'about'})
+  //       break;
+  //       case 'reviews':
+  //         this.setState({page: 'reviews'})
+  //         break;
+  //         case 'contact us':
+  //           this.setState({page: 'contact us'})
+  //           break;
+  //           case 'partners':
+  //             this.setState({page: 'partners'})
+  //             break;
+  //             case 'log in':
+  //               this.setState({page: 'log in'})
+  //               break;
+  //
+  //
+  //
+  //     default:
+  //
+  //
+  //   }
+  // }
 
   render(){
     const location ={
@@ -14,18 +46,6 @@ class Homepage extends Component {
 
       return (
         <div style={{width:'100vw',height:'100vh'}}>
-      <Navbar brand="HEALTHYMENTED" right style={{backgroundColor:'#4AB4CB'}}>
-        <NavItem href='HOME'>HOME</NavItem>
-          <NavItem href='ABOUT'>ABOUT</NavItem>
-            <NavItem href='REVIEWS'>REVIEWS</NavItem>
-              <NavItem href='CONTACT US'>CONTACT US</NavItem>
-                <NavItem href='PARTNERS'>PARTNERS</NavItem>
-                  <NavItem href='LOG IN'>LOG IN</NavItem>
-                  <NavItem href='get-started.html'><Icon>more_vert</Icon></NavItem>
-
-
-
-      </Navbar>
           <Row>
             <Col s={10} offset='s1' style={{textAlign: 'center', fontSize:'45px', fontSize:'45px', color:'#BBB', fontWeight:'bold', marginTop:'80px', marginBottom:'50px'}}>
               Health is the foundation of our community.
@@ -60,14 +80,28 @@ class Homepage extends Component {
               <h3> This website is ran by the community for the community.
                 Please review the clinics once you visit them to let others know about your experience.
               </h3>
-            </Col>
-            <Col s={12} style={{textAlign:"center"}}>
-              <Button onClick={this.props.onSearchClick}>Search</Button>
-            </Col>
-          </Row>
+              </Col>
+
+              <Col s={12} m={1} style={{paddingTop:"100px", textAlign:'center'}}>
+                  <img src={"EQUAL.png"} style={{width:"100px", height:"100px"}}/>
+              </Col>
+
+              <Col s={12} m={3} style={{paddingRight:'40px', textAlign:'center'}}>
+                <img src={"HealthCenters.png"} style={{width:"300px", height:"300px"}}/>
+                <h3> This website is ran by the community for the community.
+                  Please review the clinics once you visit them to let others know about your experience.
+                </h3>
+              </Col>
+              <Col s={12} style={{textAlign:"center"}}>
+                <Button onClick={this.props.onSearchClick}>Search</Button>
+              </Col>
+            </Row>
           </div>
         )
-  }
+
+        }
+
+  
 }
 
 export default Homepage

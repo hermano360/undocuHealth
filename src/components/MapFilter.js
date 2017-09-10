@@ -47,20 +47,7 @@ class MapFilter extends Component {
     })
       return (
         <div style={{width:'100vw',height:'100vh', padding:'0px'}}>
-          <Navbar brand='HEALTHYMENTED' right style={{backgroundColor:teal}}>
-            <NavItem href=''>HOME</NavItem>
-            <NavItem href=''>ABOUT</NavItem>
-            <NavItem href=''>REVIEWS</NavItem>
-            <NavItem href=''>CONTACT US</NavItem>
-            <NavItem href=''>PARTNERS</NavItem>
-            <NavItem href=''>LOG IN</NavItem>
-            <NavItem href='get-started.html'><Icon>more_vert</Icon></NavItem>
-          </Navbar>
             <Row>
-              <Col s={12} style={{backgroundColor:teal, textAlign:'center', width:"100vw", textAlign:'center', fontSize:'20px', color: '#FFF'}}>
-                <img src={'logo.png'} style={{width:'100px', height:'100px'}}/>
-                <br/>
-              </Col>
               <Col m={12} l={9} style={{}}>
                 <div style={{width:'72vw',height:'600px', left:'0px'}}>
                   <Map center={location} markers={markers}/>
@@ -130,6 +117,7 @@ class MapFilter extends Component {
               <div className="font">CONTACT</div>
             </Col> */}
           </Row>
+          <Button onClick={()=>{this.props.onPropertyChange('page','review')}}>Change to Reviews</Button>
         </div>
       )
 
