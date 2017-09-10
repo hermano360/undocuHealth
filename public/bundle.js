@@ -28844,10 +28844,10 @@
 	          null,
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
-	            { s: 10, offset: 's1', style: (_ref = { textAlign: 'center', fontSize: '35px' }, _defineProperty(_ref, 'fontSize', '40px'), _defineProperty(_ref, 'color', '#BBB'), _defineProperty(_ref, 'fontWeight', 'bold'), _defineProperty(_ref, 'paddingTop', '20px'), _ref) },
+	            { s: 10, offset: 's1', style: (_ref = { textAlign: 'center', fontSize: '45px' }, _defineProperty(_ref, 'fontSize', '45px'), _defineProperty(_ref, 'color', '#BBB'), _defineProperty(_ref, 'fontWeight', 'bold'), _defineProperty(_ref, 'marginTop', '80px'), _defineProperty(_ref, 'marginBottom', '50px'), _ref) },
 	            'Health is the foundation of our community.',
 	            _react2.default.createElement('br', null),
-	            'Search for your nearest health provider'
+	            'Search for your nearest health center.'
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -28875,7 +28875,7 @@
 	            _react2.default.createElement(
 	              'h3',
 	              null,
-	              ' We will search our database and find your nearest health center based on your zipcode and/or country.'
+	              ' We will search our database and find your nearest health center based on your zipcode.'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -28890,7 +28890,7 @@
 	            _react2.default.createElement(
 	              'h3',
 	              null,
-	              ' This website is ran by the community for the community. Please review the clinics once you visit them to let others know how your experience was.'
+	              ' This website is ran by the community for the community. Please review the clinics once you visit them to let others know about your experience.'
 	            )
 	          ),
 	          _react2.default.createElement(
