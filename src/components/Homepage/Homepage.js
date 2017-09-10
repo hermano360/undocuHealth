@@ -9,35 +9,6 @@ class Homepage extends Component {
       }
     }
 
-  // onNavBarClick(menuName)  {
-  //   switch (menuName) {
-  //     case 'home':
-  //       this.setState({page: 'home'})
-  //       break;
-  //     case 'about':
-  //       this.setState({page: 'about'})
-  //       break;
-  //       case 'reviews':
-  //         this.setState({page: 'reviews'})
-  //         break;
-  //         case 'contact us':
-  //           this.setState({page: 'contact us'})
-  //           break;
-  //           case 'partners':
-  //             this.setState({page: 'partners'})
-  //             break;
-  //             case 'log in':
-  //               this.setState({page: 'log in'})
-  //               break;
-  //
-  //
-  //
-  //     default:
-  //
-  //
-  //   }
-  // }
-
   render(){
     const location ={
       lat:33.9866179,
