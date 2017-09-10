@@ -57,7 +57,7 @@ class Homepage extends Component {
                         <NavItem onClick={() => this.onNavBarClick('log in')}>LOG IN</NavItem>
                         <NavItem href='get-started.html'><Icon>more_vert</Icon></NavItem>
                     </Navbar>
-                  </div>
+
             <Row>
               <Col s={10} offset='s1' style={{textAlign: 'center', fontSize:'45px', fontSize:'45px', color:'#BBB', fontWeight:'bold', marginTop:'80px', marginBottom:'50px'}}>
                 Health is the foundation of our community.
@@ -96,8 +96,9 @@ class Homepage extends Component {
               <Col s={12} style={{textAlign:"center"}}>
                 <Button onClick={this.props.onSearchClick}>Search</Button>
               </Col>
-            </Row>)
-
+            </Row>
+          </div>
+        )
             case 'about':
               return (
                 <div style={{width:'100vw',height:'100vh'}}>

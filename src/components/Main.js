@@ -6,7 +6,6 @@ import Homepage from './Homepage/Homepage'
 import MapFilter from './MapFilter'
 
 
-
 class Main extends Component {
   constructor() {
     super()
