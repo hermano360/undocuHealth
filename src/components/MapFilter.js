@@ -17,13 +17,40 @@ class MapFilter extends Component {
       lat:33.9866179,
       lng:-118.2168448
     }
+    console.log(this.props)
+    let {markers} = this.props;
 
+    markers = markers.filter((marker)=>{
+      if(this.props.zipcode.length === 5) {
+        if(marker.zipcode == this.props.zipcode){
+          return marker
+        }
+      } else {
+        return marker
+      }
+    })
+
+    markers = markers.filter((marker)=>{
+      if(marker.healthField === this.props.healthField){
+        return marker
+      }
+    })
+    markers = markers.filter((marker)=>{
+      if(marker.status === this.props.status){
+        return marker
+      }
+    })
+        markers = markers.filter((marker)=>{
+      if(marker.languages.indexOf(this.props.language)> -1){
+        return marker
+      }
+    })
       return (
         <div style={{width:'100vw',height:'100vh', padding:'0px'}}>
             <Row>
               <Col m={12} l={9} style={{}}>
                 <div style={{width:'72vw',height:'600px', left:'0px'}}>
-                  <Map center={location}/>
+                  <Map center={location} markers={markers}/>
                 </div>
               </Col>
             <div style={{width:'20vh',height:'90px', display:'inline'}}>
@@ -39,11 +66,9 @@ class MapFilter extends Component {
                   		<option value='Dental'>Dental</option>
                   		<option value='Reproductive'>Reproductive</option>
                   	</Input>
-                    <Input s={12} type='select' label="State" defaultValue='National' onChange={(e)=>{
+                    <Input s={12} type='select' label="State" defaultValue='CA' onChange={(e)=>{
                       this.props.onPropertyChange("state", e.target.value)
                     }}>
-                      <option value='National'>National</option>
-                      <option value='AZ'>AZ</option>
                       <option value='CA'>CA</option>
                     </Input>
                     <Input s={12} type="select" onChange={(e)=>{

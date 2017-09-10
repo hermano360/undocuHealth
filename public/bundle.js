@@ -22223,6 +22223,8 @@
 	  value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(1);
@@ -22277,7 +22279,272 @@
 	    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this));
 	
 	    _this.state = {
-	      page: 'home'
+	      page: 'home',
+	      clinics: [{
+	        healthField: "Primary Care",
+	        lat: 34.079325,
+	        lng: -118.4370447,
+	        zipcode: 90210,
+	        status: 'Documented',
+	        languages: ["Spanish", "English", "Arabic"],
+	        ratings: 3.4,
+	        comment: "It was great!",
+	        name: "Los Angeles Health Center"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0651235,
+	        lng: -118.4161127,
+	        zipcode: 90210,
+	        status: 'Documented',
+	        languages: ["Spanish", "English", "Arabic"],
+	        ratings: 3.5,
+	        comment: "It was fine!",
+	        name: "Los Angeles Health Center"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0621016,
+	        lng: -118.3913506,
+	        zipcode: 90210,
+	        status: 'Documented',
+	        languages: ["Spanish", "English", "Korean", "Arabic"],
+	        ratings: 3.6,
+	        comment: "Eh",
+	        name: "Los Angeles Health Clinic"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0703849,
+	        lng: -118.3670176,
+	        zipcode: 90210,
+	        status: 'Undocumented',
+	        languages: ["Spanish", "English", "Korean", "Arabic"],
+	        ratings: 3.7,
+	        comment: "The physician was kind and understanding!",
+	        name: "Healthy California"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0791651,
+	        lng: -118.393153,
+	        zipcode: 90210,
+	        status: 'Undocumented',
+	        languages: ["Spanish", "English", "Korean", "Arabic"],
+	        ratings: 3.8,
+	        comment: "The wait was long.",
+	        name: "Healthy L.A."
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0791651,
+	        lng: -118.383153,
+	        zipcode: 90210,
+	        status: 'Undocumented',
+	        languages: ["Spanish", "English", "Korean", "Arabic"],
+	        ratings: 3.9,
+	        comment: "Good! I felt safe.",
+	        name: "Phillips Graduate Institue Counseling Center"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0135333,
+	        lng: -118.2342806,
+	        zipcode: 90023,
+	        status: 'Documented',
+	        languages: ["Spanish", "English", "Korean", "Arabic"],
+	        ratings: 4.0,
+	        comment: "Fine",
+	        name: "Planned Childhood"
+	      }, {
+	        healthField: "Mental Health",
+	        lat: 34.0235333,
+	        lng: -118.2242806,
+	        zipcode: 90023,
+	        status: 'Documented',
+	        languages: ["Spanish", "English", "Korean", "Arabic"],
+	        ratings: 4.1,
+	        comment: "Good",
+	        name: "Health Coporation"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0185333,
+	        lng: -118.2542806,
+	        zipcode: 90023,
+	        status: 'Documented',
+	        languages: ["Spanish", "English", "Korean", "Arabic"],
+	        ratings: 4.2,
+	        comment: "Good",
+	        name: "L.A. Health Coporation"
+	      }, {
+	        healthField: "Reproductive",
+	        lat: 34.0965883,
+	        lng: -118.3121293,
+	        zipcode: 90072,
+	        status: 'Documented',
+	        languages: ["Spanish", "English", "Korean"],
+	        ratings: 4.3,
+	        comment: "Good",
+	        name: "CA Health Coporation"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0995883,
+	        lng: -118.3141293,
+	        zipcode: 90072,
+	        status: 'Undocumented',
+	        languages: ["Spanish"],
+	        ratings: 4.4,
+	        comment: "I'm undocumented, and there wasn't any danger. Friendly staff",
+	        name: "Alta Family Health Clinic"
+	      }, {
+	        healthField: "Dental",
+	        lat: 34.0969883,
+	        lng: -118.3121203,
+	        zipcode: 90072,
+	        status: 'Undocumented',
+	        languages: ["Spanish", "English", "Korean", "Arabic"],
+	        ratings: 4.5,
+	        comment: "I'm undocumented, and there wasn't any danger. Nice staff",
+	        name: "Ingle Family Health Clinic"
+	      }, {
+	        healthField: "Mental Health",
+	        lat: 34.1169883,
+	        lng: -118.3120203,
+	        zipcode: 90072,
+	        status: 'Undocumented',
+	        languages: ["Spanish", "English"],
+	        ratings: 4.6,
+	        comment: "I'm undocumented, and there wasn't any danger. Kind staff",
+	        name: "South Family Health Clinic"
+	      },, {
+	        healthField: "Reproductive",
+	        lat: 34.0336902,
+	        lng: -118.2643032,
+	        zipcode: 90021,
+	        status: 'Documented',
+	        languages: ["Spanish", "English"],
+	        ratings: 4.7,
+	        comment: "Low cost and immigrant friendly",
+	        name: "Blank Medical"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0995483,
+	        lng: -118.2643132,
+	        zipcode: 90021,
+	        status: 'Undocumented',
+	        languages: ["English", "Spanish"],
+	        ratings: 4.8,
+	        comment: "Safe and reliable staff and center.",
+	        name: "Wellness Center"
+	      }, {
+	        healthField: "Dental",
+	        lat: 34.0969883,
+	        lng: -118.2643932,
+	        zipcode: 90021,
+	        status: 'Undocumented',
+	        languages: ["English"],
+	        ratings: 4.9,
+	        comment: "Cool people. Nice vibes.",
+	        name: "Kim Dental Group"
+	      }, {
+	        healthField: "Mental Health",
+	        lat: 34.1169283,
+	        lng: -118.2643012,
+	        zipcode: 90021,
+	        status: 'Documented',
+	        languages: ["Spanish", "English", "Korean", "Arabic"],
+	        ratings: 4.5,
+	        comment: "Great experience. Good environment.",
+	        name: "Happiness Research Center"
+	      }, {
+	        healthField: "Mental Health",
+	        lat: 33.8814376,
+	        lng: -118.2909509,
+	        zipcode: 90247,
+	        status: 'Undocumented',
+	        languages: ["English", "Spanish"],
+	        ratings: 4.3,
+	        comment: "Good. Didn't ask about citizenship. Only need to provide proof of income.",
+	        name: "South Bay Family Health Care"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 33.8819376,
+	        lng: -118.2109509,
+	        zipcode: 90247,
+	        status: 'Documented',
+	        languages: ["English", "Spanish", "Korean"],
+	        ratings: 4.0,
+	        comment: "Nice people.",
+	        name: "East Bay Family Health Care"
+	      }, {
+	        healthField: "Dental",
+	        lat: 33.8619376,
+	        lng: -118.2109509,
+	        zipcode: 90247,
+	        status: 'Undocumented',
+	        languages: ["English", "Spanish"],
+	        ratings: 2.0,
+	        comment: "Rude staff, made snarky comments about my accent.",
+	        name: "Smith Health Center"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 33.8341128,
+	        lng: -118.3464711,
+	        zipcode: 90502,
+	        status: 'Documented',
+	        languages: ["English"],
+	        ratings: 4.0,
+	        comment: "Good.",
+	        name: "Primary Clinic"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 33.8341128,
+	        lng: -118.3673537,
+	        zipcode: 90502,
+	        status: 'Documented',
+	        languages: ["English"],
+	        ratings: 3.0,
+	        comment: "Fine.",
+	        name: "Torrance Health Center"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0659573,
+	        lng: -118.2581611,
+	        zipcode: 90012,
+	        status: 'Undocumented',
+	        languages: ["English", "Korean"],
+	        ratings: 3.0,
+	        comment: "The staff didn't speak Korean very well, so it was difficult.",
+	        name: "Korean American Health Clinic"
+	      }, {
+	        healthField: "Primary Care",
+	        lat: 34.0259573,
+	        lng: -118.2681611,
+	        zipcode: 90012,
+	        status: 'Undocumented',
+	        languages: ["English", "Spanish"],
+	        ratings: 3.4,
+	        comment: "There was a long wait.",
+	        name: "Chinatown Health Center"
+	      }, {
+	        healthField: "Dental",
+	        lat: 34.0359573,
+	        lng: -118.2781611,
+	        zipcode: 90012,
+	        status: 'Documented',
+	        languages: ["English", "Arabic"],
+	        ratings: 4.2,
+	        comment: "Good service.",
+	        name: "Banks Wellness Center"
+	      }, {
+	        healthField: "Dental",
+	        lat: 34.0459573,
+	        lng: -118.2881611,
+	        zipcode: 90012,
+	        status: 'Documented',
+	        languages: ["English"],
+	        ratings: 4.2,
+	        comment: "Good service.",
+	        name: "TS Wellness Center"
+	      }],
+	      status: 'Documented',
+	      zipcode: '',
+	      healthField: 'Primary Health',
+	      language: 'English'
 	    };
 	    _this.handleSearchClick = _this.handleSearchClick.bind(_this);
 	    _this.setPropertyChange = _this.setPropertyChange.bind(_this);
@@ -22295,6 +22562,7 @@
 	        status: 'Documented',
 	        distance: '5',
 	        language: 'English'
+	
 	      });
 	    }
 	  }, {
@@ -22338,10 +22606,11 @@
 	        lat: 33.9866179,
 	        lng: -118.2168448
 	      };
+	
 	      var contentChoice = function contentChoice() {
 	        switch (_this2.state.page) {
 	          case 'mapfilter':
-	            return _react2.default.createElement(_MapFilter2.default, { healthField: _this2.state.healthField, onPropertyChange: _this2.setPropertyChange });
+	            return _react2.default.createElement(_MapFilter2.default, _extends({ healthField: _this2.state.healthField, onPropertyChange: _this2.setPropertyChange, markers: _this2.state.clinics }, _this2.state));
 	          case 'home':
 	            return _react2.default.createElement(_Homepage2.default, { onSearchClick: _this2.handleSearchClick });
 	          case 'review':
@@ -22358,7 +22627,7 @@
 	                  width: '100vw',
 	                  height: '100vh'
 	                } },
-	              _react2.default.createElement(_Map2.default, { center: location }),
+	              _react2.default.createElement(_Map2.default, { center: location, markers: _this2.state.clinics }),
 	              ' '
 	            );
 	        }
@@ -22425,6 +22694,8 @@
 	  value: true
 	});
 	
+	var _extends = Object.assign || function (target) { for (var i = 1; i < arguments.length; i++) { var source = arguments[i]; for (var key in source) { if (Object.prototype.hasOwnProperty.call(source, key)) { target[key] = source[key]; } } } return target; };
+	
 	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 	
 	var _react = __webpack_require__(1);
@@ -22463,8 +22734,18 @@
 	  _createClass(Map, [{
 	    key: 'render',
 	    value: function render() {
-	      console.log('test');
+	      console.log(this.props.markers);
 	      var mapContainer = _react2.default.createElement('div', { style: { height: '100%', width: '100%' } });
+	      var markers = this.props.markers.map(function (clinic, i) {
+	        var marker = {
+	          position: {
+	            lat: parseFloat(clinic.lat),
+	            lng: parseFloat(clinic.lng)
+	          }
+	        };
+	
+	        return _react2.default.createElement(_reactGoogleMaps.Marker, _extends({ draggable: false, key: i }, marker));
+	      });
 	      var that = this;
 	
 	      return _react2.default.createElement(
@@ -22472,14 +22753,18 @@
 	        { style: { height: "100%", width: '100%' } },
 	        _react2.default.createElement(_reactGoogleMaps.GoogleMapLoader, {
 	          containerElement: mapContainer,
-	          googleMapElement: _react2.default.createElement(_reactGoogleMaps.GoogleMap, {
-	            defaultZoom: 10,
-	            defaultCenter: this.props.center,
-	            options: {
-	              mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DEFAULT,
-	                position: google.maps.ControlPosition.LEFT_BOTTOM
-	              } }
-	          }) })
+	          googleMapElement: _react2.default.createElement(
+	            _reactGoogleMaps.GoogleMap,
+	            {
+	              defaultZoom: 10,
+	              defaultCenter: this.props.center,
+	              options: {
+	                mapTypeControlOptions: { style: google.maps.MapTypeControlStyle.DEFAULT,
+	                  position: google.maps.ControlPosition.LEFT_BOTTOM
+	                } }
+	            },
+	            markers
+	          ) })
 	      );
 	    }
 	  }]);
@@ -34020,7 +34305,35 @@
 	        lat: 33.9866179,
 	        lng: -118.2168448
 	      };
+	      console.log(this.props);
+	      var markers = this.props.markers;
 	
+	
+	      markers = markers.filter(function (marker) {
+	        if (_this2.props.zipcode.length === 5) {
+	          if (marker.zipcode == _this2.props.zipcode) {
+	            return marker;
+	          }
+	        } else {
+	          return marker;
+	        }
+	      });
+	
+	      markers = markers.filter(function (marker) {
+	        if (marker.healthField === _this2.props.healthField) {
+	          return marker;
+	        }
+	      });
+	      markers = markers.filter(function (marker) {
+	        if (marker.status === _this2.props.status) {
+	          return marker;
+	        }
+	      });
+	      markers = markers.filter(function (marker) {
+	        if (marker.languages.indexOf(_this2.props.language) > -1) {
+	          return marker;
+	        }
+	      });
 	      return _react2.default.createElement(
 	        'div',
 	        { style: { width: '100vw', height: '100vh', padding: '0px' } },
@@ -34033,7 +34346,7 @@
 	            _react2.default.createElement(
 	              'div',
 	              { style: { width: '72vw', height: '600px', left: '0px' } },
-	              _react2.default.createElement(_Map2.default, { center: location })
+	              _react2.default.createElement(_Map2.default, { center: location, markers: markers })
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -34077,19 +34390,9 @@
 	                  ),
 	                  _react2.default.createElement(
 	                    _reactMaterialize.Input,
-	                    { s: 12, type: 'select', label: 'State', defaultValue: 'National', onChange: function onChange(e) {
+	                    { s: 12, type: 'select', label: 'State', defaultValue: 'CA', onChange: function onChange(e) {
 	                        _this2.props.onPropertyChange("state", e.target.value);
 	                      } },
-	                    _react2.default.createElement(
-	                      'option',
-	                      { value: 'National' },
-	                      'National'
-	                    ),
-	                    _react2.default.createElement(
-	                      'option',
-	                      { value: 'AZ' },
-	                      'AZ'
-	                    ),
 	                    _react2.default.createElement(
 	                      'option',
 	                      { value: 'CA' },
