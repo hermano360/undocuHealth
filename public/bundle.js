@@ -80,11 +80,7 @@
 	  _createClass(App, [{
 	    key: 'render',
 	    value: function render() {
-	      return _react2.default.createElement(
-	        'div',
-	        null,
-	        _react2.default.createElement(_Main2.default, null)
-	      );
+	      return _react2.default.createElement(_Main2.default, null);
 	    }
 	  }]);
 	
@@ -22241,6 +22237,10 @@
 	
 	var _Homepage2 = _interopRequireDefault(_Homepage);
 	
+	var _MapFilter = __webpack_require__(289);
+	
+	var _MapFilter2 = _interopRequireDefault(_MapFilter);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22260,10 +22260,57 @@
 	    _this.state = {
 	      page: 'home'
 	    };
+	    _this.handleSearchClick = _this.handleSearchClick.bind(_this);
+	    _this.setPropertyChange = _this.setPropertyChange.bind(_this);
 	    return _this;
 	  }
 	
 	  _createClass(Main, [{
+	    key: 'handleSearchClick',
+	    value: function handleSearchClick() {
+	      this.setState({
+	        page: 'mapfilter',
+	        healthField: 'Primary Care',
+	        state: 'National',
+	        zipcode: '',
+	        status: 'Documented',
+	        distance: '5',
+	        language: 'English'
+	      });
+	    }
+	  }, {
+	    key: 'setPropertyChange',
+	    value: function setPropertyChange(key, value) {
+	      console.log(key, value);
+	      var stateObject = {};
+	      switch (key) {
+	        case 'page':
+	          stateObject['page'] = value;
+	          break;
+	        case 'healthField':
+	          stateObject['healthField'] = value;
+	          break;
+	        case 'state':
+	          stateObject['state'] = value;
+	          break;
+	        case 'zipcode':
+	          stateObject['zipcode'] = value;
+	          break;
+	        case 'status':
+	          stateObject['status'] = value;
+	          break;
+	        case 'distance':
+	          stateObject['distance'] = value;
+	          break;
+	        case 'language':
+	          stateObject['language'] = value;
+	          break;
+	        default:
+	          console.log('state attribute not recognized');
+	      }
+	      this.setState(stateObject);
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var location = {
@@ -22271,13 +22318,19 @@
 	        lng: -118.2168448
 	      };
 	      switch (this.state.page) {
+	        case 'mapfilter':
+	          return _react2.default.createElement(_MapFilter2.default, { healthField: this.state.healthField, onPropertyChange: this.setPropertyChange });
 	        case 'home':
-	          return _react2.default.createElement(_Homepage2.default, null);
+	          return _react2.default.createElement(_Homepage2.default, { onSearchClick: this.handleSearchClick });
 	        case 'map':
 	          return _react2.default.createElement(
 	            'div',
-	            { style: { width: '100vw', height: '100vh' } },
-	            _react2.default.createElement(_Map2.default, { center: location })
+	            { style: {
+	                width: '100vw',
+	                height: '100vh'
+	              } },
+	            _react2.default.createElement(_Map2.default, { center: location }),
+	            ' '
 	          );
 	      }
 	    }
@@ -28691,6 +28744,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -28709,6 +28764,8 @@
 	  _createClass(Homepage, [{
 	    key: 'render',
 	    value: function render() {
+	      var _ref;
+	
 	      var location = {
 	        lat: 33.9866179,
 	        lng: -118.2168448
@@ -28719,7 +28776,37 @@
 	        { style: { width: '100vw', height: '100vh' } },
 	        _react2.default.createElement(
 	          _reactMaterialize.Navbar,
-	          { brand: 'Our Amazing Name', right: true, style: { backgroundColor: 'teal' } },
+	          { brand: 'HEALTHYMENTED', right: true, style: { backgroundColor: '#4AB4CB' } },
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'HOME' },
+	            'HOME'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'ABOUT' },
+	            'ABOUT'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'REVIEWS' },
+	            'REVIEWS'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'CONTACT US' },
+	            'CONTACT US'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'PARTNERS' },
+	            'PARTNERS'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'LOG IN' },
+	            'LOG IN'
+	          ),
 	          _react2.default.createElement(
 	            _reactMaterialize.NavItem,
 	            { href: 'get-started.html' },
@@ -28735,13 +28822,63 @@
 	          null,
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
-	            { s: 10, offset: 's1', style: { textAlign: 'center', fontSize: '30px' } },
-	            'Health is the foundation of our community. Search for your nearest health provider'
+	            { s: 10, offset: 's1', style: (_ref = { textAlign: 'center', fontSize: '45px' }, _defineProperty(_ref, 'fontSize', '45px'), _defineProperty(_ref, 'color', '#BBB'), _defineProperty(_ref, 'fontWeight', 'bold'), _defineProperty(_ref, 'marginTop', '80px'), _defineProperty(_ref, 'marginBottom', '50px'), _ref) },
+	            'Health is the foundation of our community.',
+	            _react2.default.createElement('br', null),
+	            'Search for your nearest health center.'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactMaterialize.Row,
+	          null,
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, m: 3, style: { paddingLeft: '40px', textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "People.png", style: { width: "300px", height: "300px" } }),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              ' Regardless of your immigration status and/or language spoken at home, we will find a health center near you.'
+	            )
 	          ),
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
-	            { s: 10, offset: 's1', style: { textAlign: 'center', fontSize: '30px' } },
-	            'Health is the foundation of our community. Search for your nearest health provider'
+	            { s: 12, m: 1, style: { paddingTop: "100px", textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "PLUS.png", style: { width: "100px", height: "100px" } })
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, m: 4, style: { textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "Location.png", style: { width: "300px", height: "300px", textAlign: 'center' } }),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              ' We will search our database and find your nearest health center based on your zipcode.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, m: 1, style: { paddingTop: "100px", textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "EQUAL.png", style: { width: "100px", height: "100px" } })
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, m: 3, style: { paddingRight: '40px', textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "HealthCenters.png", style: { width: "300px", height: "300px" } }),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              ' This website is ran by the community for the community. Please review the clinics once you visit them to let others know about your experience.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, style: { textAlign: "center" } },
+	            _react2.default.createElement(
+	              _reactMaterialize.Button,
+	              { onClick: this.props.onSearchClick },
+	              'Search'
+	            )
 	          )
 	        )
 	      );
@@ -33764,6 +33901,250 @@
 	};
 	
 	exports.default = Toast;
+
+/***/ }),
+/* 289 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactMaterialize = __webpack_require__(241);
+	
+	var _Map = __webpack_require__(185);
+	
+	var _Map2 = _interopRequireDefault(_Map);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var teal = "#4AB4CB";
+	var red = "#EF4423";
+	var lightG = '#CCC';
+	var darkG = '#424242';
+	
+	var MapFilter = function (_Component) {
+	  _inherits(MapFilter, _Component);
+	
+	  function MapFilter() {
+	    _classCallCheck(this, MapFilter);
+	
+	    return _possibleConstructorReturn(this, (MapFilter.__proto__ || Object.getPrototypeOf(MapFilter)).call(this));
+	  }
+	
+	  _createClass(MapFilter, [{
+	    key: 'render',
+	    value: function render() {
+	      var _ref,
+	          _this2 = this;
+	
+	      var location = {
+	        lat: 33.9866179,
+	        lng: -118.2168448
+	      };
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { style: { width: '100vw', height: '100vh', padding: '0px' } },
+	        _react2.default.createElement(
+	          _reactMaterialize.Navbar,
+	          { brand: 'HEALTHYMENTED', right: true, style: { backgroundColor: teal } },
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'HOME'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'ABOUT'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'REVIEWS'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'CONTACT US'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'PARTNERS'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: '' },
+	            'LOG IN'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'get-started.html' },
+	            _react2.default.createElement(
+	              _reactMaterialize.Icon,
+	              null,
+	              'more_vert'
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactMaterialize.Row,
+	          null,
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, style: (_ref = { backgroundColor: teal, textAlign: 'center', width: "100vw" }, _defineProperty(_ref, 'textAlign', 'center'), _defineProperty(_ref, 'fontSize', '20px'), _defineProperty(_ref, 'color', '#FFF'), _ref) },
+	            _react2.default.createElement('img', { src: 'logo.png', style: { width: '100px', height: '100px' } }),
+	            _react2.default.createElement('br', null)
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { m: 12, l: 9, style: {} },
+	            _react2.default.createElement(
+	              'div',
+	              { style: { width: '72vw', height: '600px', left: '0px' } },
+	              _react2.default.createElement(_Map2.default, { center: location })
+	            )
+	          ),
+	          _react2.default.createElement(
+	            'div',
+	            { style: { width: '20vh', height: '90px', display: 'inline' } },
+	            _react2.default.createElement(
+	              _reactMaterialize.Row,
+	              null,
+	              _react2.default.createElement(
+	                _reactMaterialize.Col,
+	                { m: 12, l: 3 },
+	                _react2.default.createElement('p', null),
+	                _react2.default.createElement(
+	                  'form',
+	                  { action: '', method: '' },
+	                  _react2.default.createElement(
+	                    _reactMaterialize.Input,
+	                    { s: 12, type: 'select', label: 'Health Field', defaultValue: 'Primary Care', onChange: function onChange(e) {
+	                        _this2.props.onPropertyChange("healthField", e.target.value);
+	                      } },
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'Primary Care' },
+	                      'Primary Care'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'Mental Health' },
+	                      'Mental Health'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'Dental' },
+	                      'Dental'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'Reproductive' },
+	                      'Reproductive'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    _reactMaterialize.Input,
+	                    { s: 12, type: 'select', label: 'State', defaultValue: 'National', onChange: function onChange(e) {
+	                        _this2.props.onPropertyChange("state", e.target.value);
+	                      } },
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'National' },
+	                      'National'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'AZ' },
+	                      'AZ'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'CA' },
+	                      'CA'
+	                    )
+	                  ),
+	                  _react2.default.createElement(
+	                    _reactMaterialize.Input,
+	                    { s: 12, type: 'select', onChange: function onChange(e) {
+	                        _this2.props.onPropertyChange("status", e.target.value);
+	                      } },
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'Documented' },
+	                      'Documented'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'Undocumented' },
+	                      'Undocumented'
+	                    )
+	                  ),
+	                  _react2.default.createElement(_reactMaterialize.Input, { s: 12, type: 'text', label: 'Zipcode', onChange: function onChange(e) {
+	                      _this2.props.onPropertyChange("zipcode", e.target.value);
+	                    } }),
+	                  _react2.default.createElement(_reactMaterialize.Input, { s: 12, type: 'text', label: 'Distance', onChange: function onChange(e) {
+	                      _this2.props.onPropertyChange("distance", e.target.value);
+	                    } }),
+	                  _react2.default.createElement(
+	                    _reactMaterialize.Input,
+	                    { s: 12, type: 'select', label: 'Language', defaultValue: 'Language', onChange: function onChange(e) {
+	                        _this2.props.onPropertyChange("language", e.target.value);
+	                      } },
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'English' },
+	                      'English'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'Spanish' },
+	                      'Spanish'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'Korean' },
+	                      'Korean'
+	                    ),
+	                    _react2.default.createElement(
+	                      'option',
+	                      { value: 'Arabic' },
+	                      'Arabic'
+	                    )
+	                  )
+	                )
+	              )
+	            )
+	          )
+	        ),
+	        _react2.default.createElement(_reactMaterialize.Row, null)
+	      );
+	    }
+	  }]);
+	
+	  return MapFilter;
+	}(_react.Component);
+	
+	exports.default = MapFilter;
 
 /***/ })
 /******/ ]);

@@ -1,9 +1,11 @@
 var express = require('express');
+
 var bodyParser = require('body-parser');
 var postman = require('postman');
 var Clinic = require('./api/models/clinic');
 var Ratings = require('./api/models/ratings');
 var controllers = require('./api/controllers/clinicController');
+
 
 var app = express();
 const PORT = process.env.PORT || 3000;
