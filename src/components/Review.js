@@ -8,7 +8,7 @@ var lightG = '#CCC';
 var darkG = '#424242';
 
 
-class Homepage extends Component {
+class Review extends Component {
   constructor(){
     super()
     }
@@ -21,40 +21,27 @@ class Homepage extends Component {
 
       return (
         <div style={{width:'100vw',height:'100vh'}}>
-          <Navbar brand='HEALTHYMENTED' right style={{backgroundColor:teal}}>
-            <NavItem href=''>HOME</NavItem>
-            <NavItem href=''>ABOUT</NavItem>
-            <NavItem href=''>REVIEWS</NavItem>
-            <NavItem href=''>CONTACT US</NavItem>
-            <NavItem href=''>PARTNERS</NavItem>
-            <NavItem href=''>LOG IN</NavItem>
-            <NavItem href='get-started.html'><Icon>more_vert</Icon></NavItem>
-          </Navbar>
             <Row>
-              <Col s={12} style={{backgroundColor:teal, textAlign:'center', width:"100vw", textAlign:'center', fontSize:'20px', color: '#FFF'}}>
-                <img src={'logo.png'} style={{width:'100px', height:'100px'}}/>
-                <br/>
-              </Col>
-              <Col s={12} style={{textAlign:'center', color:red}}>
+              <Col s={12} style={{textAlign:'center', color:red, marginTop:'50px'}}>
                 <h1>REVIEW THE CLINIC</h1>
               </Col>
               <Col s={12} style={{textAlign:'center'}}>
-                <div>*****</div>
+                <img src='Stars.png' style={{width:'690px', height:'175px'}}/>
               </Col>
 
-              <Col>
+              <Col s={12} style={{textAlign:'center'}}>
                 <form action="" method="">
-                  <Col s={12}>
-                    <input type="text" label="name" placeholder="FULL NAME"/>
+                  <Col s={12} style={{marginBottom:'30px', marginTop:'30px'}}>
+                    <input type="text" label="clinic-name" placeholder="Clinic Name"/>
                   </Col>
-                  <Col s={6}>
-                    <input type="text" label="email" placeholder="EMAIL"/>
+                  <Col s={6} style={{marginBottom:'30px'}}>
+                    <input type="text" label="full name" placeholder="Full Name"/>
                   </Col>
-                  <Col s={6}>
-                    <input type="text" label="zipcode" placeholder="ZIP CODE"/>
+                  <Col s={6} style={{marginBottom:'30px'}}>
+                    <input type="text" label="email" placeholder="Email"/>
                   </Col>
-                  <Col s={12}>
-                    <textarea placeholder="COMMENT">
+                  <Col s={12} style={{marginBottom:'30px'}}>
+                    <textarea placeholder="COMMENT" rows="4">
 
                     </textarea>
                   </Col>
@@ -64,22 +51,6 @@ class Homepage extends Component {
                 </form>
               </Col>
 
-              <Row>
-                <Col s={12} style={{backgroundColor: lightG, width:'100vw', height:'100px', textAlign:'center', marginTop:'30px'}}>
-                    <div style={{paddingTop:'35px'}}>
-                      <a href="#" style={{paddingRight:'5px'}}><img src="facebook.png" style={{width:"40px", height:"40px"}}/></a>
-                      <a href="#" style={{paddingRight:'5px'}}><img src="instagram.png" style={{width:"40px", height:"40px"}}/></a>
-                      <a href="#"><img src="twitter.png" style={{width:"40px", height:"40px"}}/></a>
-                    </div>
-                </Col>
-                {/* <Col s={12} style={{backgroundColor: darkG, width:'100vw', height:'100px', color:'#FFF', textAlign:'center'}}>
-                  <br></br>
-                  <div className="font">ABOUT</div>
-                  <div className="font">COMMUNITY PARTNERS</div>
-                  <div className="font">CONTACT</div>
-                </Col> */}
-              </Row>
-
           </Row>
         </div>
       )
@@ -87,4 +58,4 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage
+export default Review
