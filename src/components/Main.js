@@ -4,6 +4,8 @@ import Homepage from './Homepage/Homepage'
 import MapFilter from './MapFilter'
 import Review from './Review'
 import {Navbar, NavItem, Icon, Row, Col, Button, Input} from 'react-materialize'
+import About from './About'
+import Partners from './Partners'
 
 var teal = "#4AB4CB";
 var red = "#EF4423";
@@ -302,7 +304,11 @@ class Main extends Component {
         ratings: 4.2,
         comment: "Good service.",
         name: "TS Wellness Center"
-      }]
+      }],
+      status:'Documented',
+      zipcode: '',
+      healthField: 'Primary Health',
+      language: 'English'
     }
     this.handleSearchClick = this.handleSearchClick.bind(this)
     this.setPropertyChange = this.setPropertyChange.bind(this)
@@ -369,6 +375,13 @@ class Main extends Component {
         case 'review':
           return ( <Review/>
           )
+
+        case 'about':
+          return ( <About/>
+          )
+          case 'partners':
+            return ( <Partners/>
+            )
         case 'map':
           return (
             <div style = {
@@ -387,13 +400,11 @@ class Main extends Component {
       return (
         <div>
           <Navbar brand='HEALTHYMENTED' right style={{backgroundColor:teal, paddingLeft:'15px'}}>
-            <NavItem href=''>HOME</NavItem>
-            <NavItem href=''>ABOUT</NavItem>
-            <NavItem href=''>REVIEWS</NavItem>
-            <NavItem href=''>CONTACT US</NavItem>
-            <NavItem href=''>PARTNERS</NavItem>
-            <NavItem href=''>LOG IN</NavItem>
-            <NavItem href='get-started.html'><Icon>more_vert</Icon></NavItem>
+            <NavItem onClick={()=> this.setPropertyChange('page', 'home')}>HOME</NavItem>
+            <NavItem onClick={()=> this.setPropertyChange('page', 'mapfilter')}>SEARCH</NavItem>
+            <NavItem onClick={()=> this.setPropertyChange('page', 'about')}>ABOUT</NavItem>
+            <NavItem onClick={()=> this.setPropertyChange('page', 'review')}>REVIEWS</NavItem>
+            <NavItem onClick={()=> this.setPropertyChange('page', 'partners')}>PARTNERS</NavItem>
           </Navbar>
           {contentChoice()}
         </div>
