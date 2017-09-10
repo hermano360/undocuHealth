@@ -22260,10 +22260,18 @@
 	    _this.state = {
 	      page: 'home'
 	    };
+	    _this.handleSearchClick = _this.handleSearchClick.bind(_this);
 	    return _this;
 	  }
 	
 	  _createClass(Main, [{
+	    key: 'handleSearchClick',
+	    value: function handleSearchClick() {
+	      this.setState({
+	        page: 'map'
+	      });
+	    }
+	  }, {
 	    key: 'render',
 	    value: function render() {
 	      var location = {
@@ -22272,12 +22280,16 @@
 	      };
 	      switch (this.state.page) {
 	        case 'home':
-	          return _react2.default.createElement(_Homepage2.default, null);
+	          return _react2.default.createElement(_Homepage2.default, { onSearchClick: this.handleSearchClick });
 	        case 'map':
 	          return _react2.default.createElement(
 	            'div',
-	            { style: { width: '100vw', height: '100vh' } },
-	            _react2.default.createElement(_Map2.default, { center: location })
+	            { style: {
+	                width: '100vw',
+	                height: '100vh'
+	              } },
+	            _react2.default.createElement(_Map2.default, { center: location }),
+	            ' '
 	          );
 	      }
 	    }
@@ -28691,6 +28703,8 @@
 	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
+	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 	
 	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
@@ -28709,6 +28723,8 @@
 	  _createClass(Homepage, [{
 	    key: 'render',
 	    value: function render() {
+	      var _ref;
+	
 	      var location = {
 	        lat: 33.9866179,
 	        lng: -118.2168448
@@ -28719,7 +28735,7 @@
 	        { style: { width: '100vw', height: '100vh' } },
 	        _react2.default.createElement(
 	          _reactMaterialize.Navbar,
-	          { brand: 'Our Amazing Name', right: true, style: { backgroundColor: 'teal' } },
+	          { brand: 'HEALTHYMENTED', right: true, style: { backgroundColor: '#4AB4CB' } },
 	          _react2.default.createElement(
 	            _reactMaterialize.NavItem,
 	            { href: 'get-started.html' },
@@ -28735,13 +28751,63 @@
 	          null,
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
-	            { s: 10, offset: 's1', style: { textAlign: 'center', fontSize: '30px' } },
-	            'Health is the foundation of our community. Search for your nearest health provider'
+	            { s: 10, offset: 's1', style: (_ref = { textAlign: 'center', fontSize: '35px' }, _defineProperty(_ref, 'fontSize', '40px'), _defineProperty(_ref, 'color', '#BBB'), _defineProperty(_ref, 'fontWeight', 'bold'), _defineProperty(_ref, 'paddingTop', '20px'), _ref) },
+	            'Health is the foundation of our community.',
+	            _react2.default.createElement('br', null),
+	            'Search for your nearest health provider'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactMaterialize.Row,
+	          null,
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, m: 3, style: { paddingLeft: '40px', textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "People.png", style: { width: "300px", height: "300px" } }),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              ' Regardless of your immigration status and/or language spoken at home, we will find a health center near you.'
+	            )
 	          ),
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
-	            { s: 10, offset: 's1', style: { textAlign: 'center', fontSize: '30px' } },
-	            'Health is the foundation of our community. Search for your nearest health provider'
+	            { s: 12, m: 1, style: { paddingTop: "100px", textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "PLUS.png", style: { width: "100px", height: "100px" } })
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, m: 4, style: { textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "Location.png", style: { width: "300px", height: "300px", textAlign: 'center' } }),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              ' We will search our database and find your nearest health center based on your zipcode and/or country.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, m: 1, style: { paddingTop: "100px", textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "EQUAL.png", style: { width: "100px", height: "100px" } })
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, m: 3, style: { paddingRight: '40px', textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: "HealthCenters.png", style: { width: "300px", height: "300px" } }),
+	            _react2.default.createElement(
+	              'h3',
+	              null,
+	              ' This website is ran by the community for the community. Please review the clinics once you visit them to let others know how your experience was.'
+	            )
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 12, style: { textAlign: "center" } },
+	            _react2.default.createElement(
+	              _reactMaterialize.Button,
+	              { onClick: this.props.onSearchClick },
+	              'Search'
+	            )
 	          )
 	        )
 	      );

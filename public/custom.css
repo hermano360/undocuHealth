@@ -1,0 +1,29 @@
+@import url('https://fonts.googleapis.com/css?family=Ubuntu');
+
+body {
+  font-family: 'Ubuntu', sans-serif;
+}
+
+.btn{
+  background-color: #EF4423;
+  border-radius: 20px;
+}
+h3{
+  text-align: center;
+  font-size: 30px;
+  font-family: 'Ubuntu', sans-serif;
+
+}
+h4{
+  font-size: 60px;
+  font-family: 'Ubuntu', sans-serif;
+  color: #EF4423;
+}
+h5{
+  font-size: 43px;
+  font-family: 'Ubuntu', sans-serif;
+}
+.container {
+   margin:0 auto; /* this will center the page */
+   width:960px; /*  use your width here */
+}
