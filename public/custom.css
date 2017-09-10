@@ -15,11 +15,16 @@ h3{
 
 }
 h4{
-  font-size: 60px;
+  font-size: 43px;
+  font-family: 'Ubuntu', sans-serif;
+}
+h5{
+  text-align: center;
+  font-size: 40px;
   font-family: 'Ubuntu', sans-serif;
   color: #EF4423;
 }
-h5{
+h6{
   font-size: 43px;
   font-family: 'Ubuntu', sans-serif;
 }

@@ -22247,6 +22247,14 @@
 	
 	var _reactMaterialize = __webpack_require__(241);
 	
+	var _About = __webpack_require__(291);
+	
+	var _About2 = _interopRequireDefault(_About);
+	
+	var _Partners = __webpack_require__(292);
+	
+	var _Partners2 = _interopRequireDefault(_Partners);
+	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -22338,6 +22346,11 @@
 	            return _react2.default.createElement(_Homepage2.default, { onSearchClick: _this2.handleSearchClick });
 	          case 'review':
 	            return _react2.default.createElement(_Review2.default, null);
+	
+	          case 'about':
+	            return _react2.default.createElement(_About2.default, null);
+	          case 'partners':
+	            return _react2.default.createElement(_Partners2.default, null);
 	          case 'map':
 	            return _react2.default.createElement(
 	              'div',
@@ -22358,42 +22371,38 @@
 	          { brand: 'HEALTHYMENTED', right: true, style: { backgroundColor: teal, paddingLeft: '15px' } },
 	          _react2.default.createElement(
 	            _reactMaterialize.NavItem,
-	            { href: '' },
+	            { onClick: function onClick() {
+	                return _this2.setPropertyChange('page', 'home');
+	              } },
 	            'HOME'
 	          ),
 	          _react2.default.createElement(
 	            _reactMaterialize.NavItem,
-	            { href: '' },
+	            { onClick: function onClick() {
+	                return _this2.setPropertyChange('page', 'mapfilter');
+	              } },
+	            'SEARCH'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { onClick: function onClick() {
+	                return _this2.setPropertyChange('page', 'about');
+	              } },
 	            'ABOUT'
 	          ),
 	          _react2.default.createElement(
 	            _reactMaterialize.NavItem,
-	            { href: '' },
+	            { onClick: function onClick() {
+	                return _this2.setPropertyChange('page', 'review');
+	              } },
 	            'REVIEWS'
 	          ),
 	          _react2.default.createElement(
 	            _reactMaterialize.NavItem,
-	            { href: '' },
-	            'CONTACT US'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: '' },
+	            { onClick: function onClick() {
+	                return _this2.setPropertyChange('page', 'partners');
+	              } },
 	            'PARTNERS'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: '' },
-	            'LOG IN'
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.NavItem,
-	            { href: 'get-started.html' },
-	            _react2.default.createElement(
-	              _reactMaterialize.Icon,
-	              null,
-	              'more_vert'
-	            )
 	          )
 	        ),
 	        contentChoice()
@@ -28929,21 +28938,6 @@
 	          ),
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
-	            { s: 12, m: 1, style: { paddingTop: "100px", textAlign: 'center' } },
-	            _react2.default.createElement('img', { src: "EQUAL.png", style: { width: "100px", height: "100px" } })
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.Col,
-	            { s: 12, m: 3, style: { paddingRight: '40px', textAlign: 'center' } },
-	            _react2.default.createElement('img', { src: "HealthCenters.png", style: { width: "300px", height: "300px" } }),
-	            _react2.default.createElement(
-	              'h3',
-	              null,
-	              ' This website is ran by the community for the community. Please review the clinics once you visit them to let others know about your experience.'
-	            )
-	          ),
-	          _react2.default.createElement(
-	            _reactMaterialize.Col,
 	            { s: 12, style: { textAlign: "center" } },
 	            _react2.default.createElement(
 	              _reactMaterialize.Button,
@@ -34290,6 +34284,199 @@
 	}(_react.Component);
 	
 	exports.default = Review;
+
+/***/ }),
+/* 291 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactMaterialize = __webpack_require__(241);
+	
+	var _Map = __webpack_require__(185);
+	
+	var _Map2 = _interopRequireDefault(_Map);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var teal = "#4AB4CB";
+	var red = "#EF4423";
+	var lightG = '#CCC';
+	var darkG = '#424242';
+	
+	var About = function (_Component) {
+	  _inherits(About, _Component);
+	
+	  function About() {
+	    _classCallCheck(this, About);
+	
+	    return _possibleConstructorReturn(this, (About.__proto__ || Object.getPrototypeOf(About)).call(this));
+	  }
+	
+	  _createClass(About, [{
+	    key: 'render',
+	    value: function render() {
+	      var location = {
+	        lat: 33.9866179,
+	        lng: -118.2168448
+	      };
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { style: { width: '100vw', height: '100vh' } },
+	        _react2.default.createElement(
+	          _reactMaterialize.Row,
+	          null,
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            null,
+	            _react2.default.createElement(
+	              'h4',
+	              null,
+	              'ABOUT US'
+	            ),
+	            _react2.default.createElement(
+	              'h5',
+	              null,
+	              '"HEALTHYMENTED was created by the community for the community."'
+	            ),
+	            _react2.default.createElement(
+	              'h6',
+	              null,
+	              'Healthymented is an organization committed to bridging the gap between uninsured individals and health services, regardless of immigration status, income, or primary language. We strive to make health easily accessible in order to ensure each individuals capability to thrive in society and reach their full potential. We developed this website and envisioned it to be self-sustainable. In order to ensure that, we encourage you to access our reviews section for your health facility to inform the public about your unique experience.'
+	            )
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return About;
+	}(_react.Component);
+	
+	exports.default = About;
+
+/***/ }),
+/* 292 */
+/***/ (function(module, exports, __webpack_require__) {
+
+	'use strict';
+	
+	Object.defineProperty(exports, "__esModule", {
+	  value: true
+	});
+	
+	var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+	
+	var _react = __webpack_require__(1);
+	
+	var _react2 = _interopRequireDefault(_react);
+	
+	var _reactMaterialize = __webpack_require__(241);
+	
+	var _Map = __webpack_require__(185);
+	
+	var _Map2 = _interopRequireDefault(_Map);
+	
+	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+	
+	function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+	
+	function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+	
+	function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+	
+	var teal = "#4AB4CB";
+	var red = "#EF4423";
+	var lightG = '#CCC';
+	var darkG = '#424242';
+	
+	var Partners = function (_Component) {
+	  _inherits(Partners, _Component);
+	
+	  function Partners() {
+	    _classCallCheck(this, Partners);
+	
+	    return _possibleConstructorReturn(this, (Partners.__proto__ || Object.getPrototypeOf(Partners)).call(this));
+	  }
+	
+	  _createClass(Partners, [{
+	    key: 'render',
+	    value: function render() {
+	      var location = {
+	        lat: 33.9866179,
+	        lng: -118.2168448
+	      };
+	
+	      return _react2.default.createElement(
+	        'div',
+	        { style: { width: '100vw', height: '100vh' } },
+	        _react2.default.createElement(
+	          _reactMaterialize.Col,
+	          { s: 9, style: { textAlign: 'center' } },
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'We are a website build by community for community. We appreciate all of our partners, if you would like to be a community partner please fill out the contact page on the website.'
+	          ),
+	          _react2.default.createElement(
+	            'p',
+	            null,
+	            'Thank you!'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactMaterialize.Col,
+	          { s: 12, style: { textAlign: 'center' } },
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'OUR COMMUNITY PARTNERS'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactMaterialize.Col,
+	          null,
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 4 },
+	            _react2.default.createElement('img', { src: 'ucla.png' })
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 4 },
+	            _react2.default.createElement('img', { src: 'UndocuMedia.png' })
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.Col,
+	            { s: 4 },
+	            _react2.default.createElement('img', { src: 'fwd.png' })
+	          )
+	        )
+	      );
+	    }
+	  }]);
+	
+	  return Partners;
+	}(_react.Component);
+	
+	exports.default = Partners;
 
 /***/ })
 /******/ ]);

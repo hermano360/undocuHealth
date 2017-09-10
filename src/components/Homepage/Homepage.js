@@ -81,17 +81,6 @@ class Homepage extends Component {
                 Please review the clinics once you visit them to let others know about your experience.
               </h3>
               </Col>
-
-              <Col s={12} m={1} style={{paddingTop:"100px", textAlign:'center'}}>
-                  <img src={"EQUAL.png"} style={{width:"100px", height:"100px"}}/>
-              </Col>
-
-              <Col s={12} m={3} style={{paddingRight:'40px', textAlign:'center'}}>
-                <img src={"HealthCenters.png"} style={{width:"300px", height:"300px"}}/>
-                <h3> This website is ran by the community for the community.
-                  Please review the clinics once you visit them to let others know about your experience.
-                </h3>
-              </Col>
               <Col s={12} style={{textAlign:"center"}}>
                 <Button onClick={this.props.onSearchClick}>Search</Button>
               </Col>
@@ -101,7 +90,7 @@ class Homepage extends Component {
 
         }
 
-  
+
 }
 
 export default Homepage
