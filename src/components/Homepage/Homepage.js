@@ -14,9 +14,9 @@ class Homepage extends Component {
 
       return (
         <div style={{width:'100vw',height:'100vh'}}>
-      <Navbar brand="HEALTHYMENTED" right style={{backgroundColor:'#4AB4CB'}}>
+      {/* <Navbar brand="HEALTHYMENTED" right style={{backgroundColor:'#4AB4CB'}}>
           <NavItem href='get-started.html'><Icon>more_vert</Icon></NavItem>
-      </Navbar>
+      </Navbar> */}
           <Row>
             <Col s={10} offset='s1' style={{textAlign: 'center', fontSize:'35px', fontSize:'40px', color:'#BBB', fontWeight:'bold', paddingTop:'20px'}}>
               Health is the foundation of our community.
