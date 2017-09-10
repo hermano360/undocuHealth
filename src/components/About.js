@@ -76,7 +76,26 @@ class Homepage extends Component {
               <div class="font">CONTACT</div>
             </Col>
           </Row>
+          <Row>
+            <col
+            <h4>
+              "HEALTHYMENTED was created by the community for the community."
+            </h4>
+
+            <h5>
+              Healthymented is an organization committed to bridging the gap between uninsured individals and
+              health services, regardless of immigration status, income, or primary language. We strive to make
+              health easily accessible in order to ensure each individuals capability to thrive in society and reach
+              their full potential.
+
+              We developed this website and envisioned it to be self-sustainable. In order to ensure that, we
+              encourage you to access our reviews section for your health facility to inform the public about your
+              unique experience.
+            </h5>
+          </col>
+          </Row>
         </div>
+
       )
 
   }

@@ -22258,7 +22258,7 @@
 	    var _this = _possibleConstructorReturn(this, (Main.__proto__ || Object.getPrototypeOf(Main)).call(this));
 	
 	    _this.state = {
-	      page: 'mapfilter'
+	      page: 'home'
 	    };
 	    _this.handleSearchClick = _this.handleSearchClick.bind(_this);
 	    return _this;
@@ -28703,10 +28703,6 @@
 	
 	var _reactMaterialize = __webpack_require__(241);
 	
-	var _Map = __webpack_require__(185);
-	
-	var _Map2 = _interopRequireDefault(_Map);
-	
 	function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 	
 	function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -28744,6 +28740,36 @@
 	          { brand: 'HEALTHYMENTED', right: true, style: { backgroundColor: '#4AB4CB' } },
 	          _react2.default.createElement(
 	            _reactMaterialize.NavItem,
+	            { href: 'HOME' },
+	            'HOME'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'ABOUT' },
+	            'ABOUT'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'REVIEWS' },
+	            'REVIEWS'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'CONTACT US' },
+	            'CONTACT US'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'PARTNERS' },
+	            'PARTNERS'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
+	            { href: 'LOG IN' },
+	            'LOG IN'
+	          ),
+	          _react2.default.createElement(
+	            _reactMaterialize.NavItem,
 	            { href: 'get-started.html' },
 	            _react2.default.createElement(
 	              _reactMaterialize.Icon,
@@ -28757,10 +28783,10 @@
 	          null,
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
-	            { s: 10, offset: 's1', style: (_ref = { textAlign: 'center', fontSize: '35px' }, _defineProperty(_ref, 'fontSize', '40px'), _defineProperty(_ref, 'color', '#BBB'), _defineProperty(_ref, 'fontWeight', 'bold'), _defineProperty(_ref, 'paddingTop', '20px'), _ref) },
+	            { s: 10, offset: 's1', style: (_ref = { textAlign: 'center', fontSize: '45px' }, _defineProperty(_ref, 'fontSize', '45px'), _defineProperty(_ref, 'color', '#BBB'), _defineProperty(_ref, 'fontWeight', 'bold'), _defineProperty(_ref, 'marginTop', '80px'), _defineProperty(_ref, 'marginBottom', '50px'), _ref) },
 	            'Health is the foundation of our community.',
 	            _react2.default.createElement('br', null),
-	            'Search for your nearest health provider'
+	            'Search for your nearest health center.'
 	          )
 	        ),
 	        _react2.default.createElement(
@@ -28788,11 +28814,10 @@
 	            _react2.default.createElement(
 	              'h3',
 	              null,
-	              ' We will search our database and find your nearest health center based on your zipcode and/or country.'
+	              ' We will search our database and find your nearest health center based on your zipcode.'
 	            )
 	          ),
 	          _react2.default.createElement(
-<<<<<<< HEAD
 	            _reactMaterialize.Col,
 	            { s: 12, m: 1, style: { paddingTop: "100px", textAlign: 'center' } },
 	            _react2.default.createElement('img', { src: "EQUAL.png", style: { width: "100px", height: "100px" } })
@@ -28804,7 +28829,7 @@
 	            _react2.default.createElement(
 	              'h3',
 	              null,
-	              ' This website is ran by the community for the community. Please review the clinics once you visit them to let others know how your experience was.'
+	              ' This website is ran by the community for the community. Please review the clinics once you visit them to let others know about your experience.'
 	            )
 	          ),
 	          _react2.default.createElement(
@@ -28815,11 +28840,6 @@
 	              { onClick: this.props.onSearchClick },
 	              'Search'
 	            )
-=======
-	            'div',
-	            { style: { width: '90vh', height: '100px' } },
-	            _react2.default.createElement(_Map2.default, { center: location })
->>>>>>> f2cd5de515542f205f1d16dd8422a200b8e72f65
 	          )
 	        )
 	      );
