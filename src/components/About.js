@@ -36,12 +36,14 @@ class About extends Component {
               "HEALTHYMENTED was created by the community for the community."
             </h5>
 
+
             <h6>
               Healthymented is an organization committed to bridging the gap between uninsured individals and
               health services, regardless of immigration status, income, or primary language. We strive to make
-              health easily accessible in order to ensure each individuals capability to thrive in society and reach
-              their full potential.
+              health easily accessible in order to ensure each individuals capability to thrive in society.
+            </h6>
 
+            <h6 style={{marginTop: '30px'}}>
               We developed this website and envisioned it to be self-sustainable. In order to ensure that, we
               encourage you to access our reviews section for your health facility to inform the public about your
               unique experience.
