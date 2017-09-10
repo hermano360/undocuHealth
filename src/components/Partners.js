@@ -22,23 +22,23 @@ class Partners extends Component {
       return (
         <div style={{width:'100vw',height:'100vh'}}>
 
-          <Col s={9} style={{textAlign:'center'}}>
+          <Col s={12} style={{textAlign:'center', marginTop:'100px', color:lightG}}>
+            <h2>OUR COMMUNITY PARTNERS</h2>
+          </Col>
+          <Col s={12} style={{textAlign:'center', marginTop:'100px', fontSize:'25px'}}>
             <p>We are a website build by community for community. We appreciate all of our partners, if you would like to be a community partner please fill out the contact page on the website.</p>
             <p>Thank you!</p>
           </Col>
 
-          <Col s={12} style={{textAlign:'center'}}>
-            <h2>OUR COMMUNITY PARTNERS</h2>
-          </Col>
           <Col>
-            <Col s={4}>
+            <Col s={12} style={{textAlign:'center'}}>
               <img src="ucla.png"/>
             </Col>
-            <Col s={4}>
+            <Col s={12} style={{textAlign:'center', paddingTop: '40px'}}>
               <img src="UndocuMedia.png"/>
             </Col>
-            <Col s={4}>
-              <img src="fwd.png"/>
+            <Col s={12} style={{textAlign:'center'}}>
+              <img src="fwd.jpg"/>
             </Col>
           </Col>
 

@@ -34359,7 +34359,12 @@
 	            _react2.default.createElement(
 	              'h6',
 	              null,
-	              'Healthymented is an organization committed to bridging the gap between uninsured individals and health services, regardless of immigration status, income, or primary language. We strive to make health easily accessible in order to ensure each individuals capability to thrive in society and reach their full potential. We developed this website and envisioned it to be self-sustainable. In order to ensure that, we encourage you to access our reviews section for your health facility to inform the public about your unique experience.'
+	              'Healthymented is an organization committed to bridging the gap between uninsured individals and health services, regardless of immigration status, income, or primary language. We strive to make health easily accessible in order to ensure each individuals capability to thrive in society.'
+	            ),
+	            _react2.default.createElement(
+	              'h6',
+	              { style: { marginTop: '30px' } },
+	              'We developed this website and envisioned it to be self-sustainable. In order to ensure that, we encourage you to access our reviews section for your health facility to inform the public about your unique experience.'
 	            )
 	          )
 	        )
@@ -34429,7 +34434,16 @@
 	        { style: { width: '100vw', height: '100vh' } },
 	        _react2.default.createElement(
 	          _reactMaterialize.Col,
-	          { s: 9, style: { textAlign: 'center' } },
+	          { s: 12, style: { textAlign: 'center', marginTop: '100px', color: lightG } },
+	          _react2.default.createElement(
+	            'h2',
+	            null,
+	            'OUR COMMUNITY PARTNERS'
+	          )
+	        ),
+	        _react2.default.createElement(
+	          _reactMaterialize.Col,
+	          { s: 12, style: { textAlign: 'center', marginTop: '100px', fontSize: '25px' } },
 	          _react2.default.createElement(
 	            'p',
 	            null,
@@ -34443,30 +34457,21 @@
 	        ),
 	        _react2.default.createElement(
 	          _reactMaterialize.Col,
-	          { s: 12, style: { textAlign: 'center' } },
-	          _react2.default.createElement(
-	            'h2',
-	            null,
-	            'OUR COMMUNITY PARTNERS'
-	          )
-	        ),
-	        _react2.default.createElement(
-	          _reactMaterialize.Col,
 	          null,
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
-	            { s: 4 },
+	            { s: 12, style: { textAlign: 'center' } },
 	            _react2.default.createElement('img', { src: 'ucla.png' })
 	          ),
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
-	            { s: 4 },
+	            { s: 12, style: { textAlign: 'center', paddingTop: '40px' } },
 	            _react2.default.createElement('img', { src: 'UndocuMedia.png' })
 	          ),
 	          _react2.default.createElement(
 	            _reactMaterialize.Col,
-	            { s: 4 },
-	            _react2.default.createElement('img', { src: 'fwd.png' })
+	            { s: 12, style: { textAlign: 'center' } },
+	            _react2.default.createElement('img', { src: 'fwd.jpg' })
 	          )
 	        )
 	      );
