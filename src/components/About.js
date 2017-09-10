@@ -9,7 +9,7 @@ var lightG = '#CCC';
 var darkG = '#424242';
 
 
-class Homepage extends Component {
+class About extends Component {
   constructor(){
     super()
     }
@@ -93,6 +93,7 @@ class Homepage extends Component {
             </h5>
           </col>
           </Row>
+
         </div>
 
       )
@@ -100,4 +101,4 @@ class Homepage extends Component {
   }
 }
 
-export default Homepage
+export default About
